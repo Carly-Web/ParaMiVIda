@@ -34,6 +34,11 @@ body {
 }
 
 #card {
+font-family: "Dancing Script", cursive;
+  font-size: 28px;
+  color: #e91e63;
+  font-weight: normal;
+  font-style: italic;
 
   font-family: "Brush Script MT", cursive;  /* Fuente cursiva tipo carta */
   font-size: 28px;  /* Tamaño de la fuente */
