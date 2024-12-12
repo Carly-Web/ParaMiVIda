@@ -34,6 +34,13 @@ body {
 }
 
 #card {
+
+  font-family: "Brush Script MT", cursive;  /* Fuente cursiva tipo carta */
+  font-size: 28px;  /* Tamaño de la fuente */
+  color: #e91e63;   /* Color del texto */
+  font-weight: normal;  /* Normaliza el peso de la fuente */
+  font-style: italic;   /* Asegura que el texto sea cursivo */
+
   position: absolute;
   top: 0;
   left: 0;
@@ -48,6 +55,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  
 }
 
 #card.open {
