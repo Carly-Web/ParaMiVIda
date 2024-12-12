@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffe6e6;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#envelope {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: #f9c5c8;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+#envelope:before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 100px solid #f9c5c8;
+  transform: translateX(-50%);
+}
+
+#card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  transform: scaleY(0);
+  transform-origin: top;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#card.open {
+  transform: scaleY(1);
+  animation: openCard 0.5s ease-in-out forwards;
+}
+
+#card p {
+  font-size: 20px;
+  color: #e91e63;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+#hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden; /* Asegura que los corazones no se salgan de la pantalla */
+}
+
+.heart { /* Elimina el punto extra */
+  width: 20px;
+  height: 20px;
+  background-color: #e91e63;
+  position: absolute;
+  transform: rotate(45deg);
+  clip-path: polygon(50% 0, 100% 38%, 82% 100%, 50% 75%, 18% 100%, 0 38%);
+  animation: float 4s ease-in infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-500px) scale(0.5) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes openCard {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
